@@ -34,9 +34,7 @@ NodeGrid::~NodeGrid()
 heading NodeGrid::routeHeading(int nodeX, int nodeY, heading incoming)
 {
 	// If the node is in the grid, and if the node is not null
-	if (nodeX >= 0 && nodeX < width
-		&& nodeY >= 0 && nodeY < height
-		&& grid[nodeY][nodeX])
+	if(nodeExists(nodeX, nodeY)) 
 	{
 		// Determine the proper routing through the node
 		switch (incoming)
