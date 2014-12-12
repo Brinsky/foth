@@ -1,0 +1,6 @@
+build/**
+foth
+.sconsign.dblite
+**/*.swp
+**/*.swo
+docs/**
