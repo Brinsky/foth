@@ -4,11 +4,6 @@
 
 using namespace foth;
 
-int main()
-{
-	NodeGrid grid(7, 20);
-}
-
 NodeGrid::NodeGrid(int width, int height)
 {
 	this->width = width;
