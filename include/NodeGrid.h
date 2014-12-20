@@ -10,7 +10,7 @@
 class NodeGrid
 {
 	public:
-		NodeGrid(int height, int width);
+		NodeGrid(int height, int width = 7);
 		~NodeGrid();
 		foth::heading routeHeading(int x, int y,
 			foth::heading incoming);
@@ -29,7 +29,7 @@ class NodeGrid
 		} Node;
 		
 		bool nodeExists(int nodeX, int nodeY);
-
+        
 		int width;
 		int height;
 

@@ -4,7 +4,7 @@
 
 using namespace foth;
 
-NodeGrid::NodeGrid(int width, int height)
+NodeGrid::NodeGrid(int height, int width)
 {
 	this->width = width;
 	this->height = height;

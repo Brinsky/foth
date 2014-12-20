@@ -27,6 +27,9 @@ class Game
 
         void quit();
 
+    protected:
+        sf::RenderWindow& window;
+
     private:
         // Game loop functions, called in this order
         virtual void event(sf::Event a_event);
@@ -39,7 +42,6 @@ class Game
         void masterTick();
         void masterDraw();
 
-        sf::RenderWindow& window;
         std::stack<std::unique_ptr<GameState>> states;
         bool running;
 };
