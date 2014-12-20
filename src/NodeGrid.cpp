@@ -90,9 +90,19 @@ bool NodeGrid::setNode(int x, int y, foth::heading northTo, foth::heading eastTo
 
 void NodeGrid::draw(sf::RenderTarget& target, sf::RenderStates states)
 {
-    grassSprite.setPosition(100,100);
-
-    target.draw(grassSprite, states);
+    for (int x = 0; x < width; ++x)
+    {
+        for (int y = 0; y < height; ++y)
+        {
+            if (getMaterial(x, y) == foth::Grass)
+            {
+                grassSprite.setPosition(
+                    (x * PIXELS_PER_NODE) + 0.5,
+                    y * PIXELS_PER_NODE);
+                target.draw(grassSprite, states);
+            }
+        }
+    }
 }
 
 /// Determines whether or not a Node is in bounds and truly exists (is
