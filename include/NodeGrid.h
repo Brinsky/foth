@@ -16,6 +16,10 @@ class NodeGrid
 			foth::heading incoming);
 		foth::material getMaterial(int x, int y);
 
+        bool setNode(int x, int y, foth::heading northTo,
+                     foth::heading eastTo, foth::heading southTo,
+                     foth::heading westTo, foth::material material);
+
 	private:
 		/// Used to easily store the properties of defined nodes
 		typedef struct Node
@@ -28,7 +32,8 @@ class NodeGrid
 			foth::material material;
 		} Node;
 		
-		bool nodeExists(int nodeX, int nodeY);
+		bool nodeExists(int x, int y);
+        bool inBounds(int x, int y);
         
 		int width;
 		int height;

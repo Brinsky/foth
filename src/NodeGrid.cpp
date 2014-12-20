@@ -61,12 +61,41 @@ material NodeGrid::getMaterial(int nodeX, int nodeY)
 		return Grass;
 }
 
-/// Determines whether or not a Node exists at a given location
-bool NodeGrid::nodeExists(int nodeX, int nodeY)
+/// If the given coordinates are in bounds, a Node is established there with the
+/// specified properties. Returns false if the Node is not within bounds.
+bool NodeGrid::setNode(int x, int y, foth::heading northTo, foth::heading eastTo,
+                       foth::heading southTo, foth::heading westTo,
+                       foth::material material)
+{
+    if (inBounds(x, y))
+    {
+        // Create a new Node and move it into the grid
+        std::unique_ptr<Node> node(new Node);
+        node->northTo = northTo;
+        node->eastTo = eastTo;
+        node->southTo = southTo;
+        node->westTo = westTo;
+        node->material = material;
+
+        grid[x][y] = std::move(node);
+
+        return true;
+    }
+    else
+        return false;    
+}
+
+/// Determines whether or not a Node is in bounds and truly exists (is
+/// non-default) at a given location
+bool NodeGrid::nodeExists(int x, int y)
 {
 	// Checks if coordinates could be valid
 	// If so, checks if a defined Node exists at those coordinates
-	return nodeX >= 0 && nodeX < width
-		&& nodeY >= 0 && nodeY < height
-		&& grid[nodeY][nodeX];
+	return inBounds(x, y) && grid[x][y];
+}
+
+/// Determines whether or not a Node is within bounds
+bool NodeGrid::inBounds(int x, int y)
+{
+	return x >= 0 && x < width && y >= 0 && y < height;
 }
