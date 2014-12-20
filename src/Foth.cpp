@@ -33,9 +33,10 @@ void Foth::event(sf::Event event)
     }
     else if (event.type == sf::Event::Resized)
     {
-        //Maintains correct aspect ratio
-        sf::Vector2u newSize = window.getSize();
-        newSize.x = int (newSize.y / 10) * 7;
-        window.setSize(newSize);
+        // Maintains correct aspect ratio
+        // Might not always work!
+        //sf::Vector2u newSize = window.getSize();
+        //newSize.x = int (newSize.y / 10) * 7;
+        //window.setSize(newSize);
     }
 }
