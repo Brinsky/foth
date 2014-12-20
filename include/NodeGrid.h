@@ -3,15 +3,20 @@
 
 #include <vector>
 #include <memory>
+#include <SFML/Graphics.hpp>
 
 #include "Properties.h"
+#include "ResourceManager.h"
+#include "CenteredSprite.h"
 
 /// A collection of node data which represents the contents of a FOTH level
 class NodeGrid
 {
 	public:
-		NodeGrid(int height, int width = 7);
+		NodeGrid(int pixelsPerNode, ResourceManager& manager, int height,
+                 int width = 7);
 		~NodeGrid();
+
 		foth::heading routeHeading(int x, int y,
 			foth::heading incoming);
 		foth::material getMaterial(int x, int y);
@@ -20,7 +25,11 @@ class NodeGrid
                      foth::heading eastTo, foth::heading southTo,
                      foth::heading westTo, foth::material material);
 
+        void draw(sf::RenderTarget& target, sf::RenderStates states);
+
 	private:
+        CenteredSprite grassSprite;
+
 		/// Used to easily store the properties of defined nodes
 		typedef struct Node
 		{
@@ -40,6 +49,8 @@ class NodeGrid
 
 		/// A 2D vector of (pointers to) Nodes
 		std::vector<std::vector<std::unique_ptr<Node>>> grid;
+
+        const int PIXELS_PER_NODE;
 };
 
 #endif

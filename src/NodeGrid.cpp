@@ -1,10 +1,13 @@
 #include "NodeGrid.h"
+
 #include <iostream>
-#include <typeinfo>
 
 using namespace foth;
 
-NodeGrid::NodeGrid(int height, int width)
+NodeGrid::NodeGrid(int pixelsPerNode, ResourceManager& manager, int height, 
+                   int width) :
+    PIXELS_PER_NODE(pixelsPerNode),
+    grassSprite("grassTile", manager)
 {
 	this->width = width;
 	this->height = height;
@@ -83,6 +86,13 @@ bool NodeGrid::setNode(int x, int y, foth::heading northTo, foth::heading eastTo
     }
     else
         return false;    
+}
+
+void NodeGrid::draw(sf::RenderTarget& target, sf::RenderStates states)
+{
+    grassSprite.setPosition(100,100);
+
+    target.draw(grassSprite, states);
 }
 
 /// Determines whether or not a Node is in bounds and truly exists (is

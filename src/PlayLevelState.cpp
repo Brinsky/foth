@@ -1,8 +1,9 @@
 #include "PlayLevelState.h"
 
-PlayLevelState::PlayLevelState(Game& a_game) :
-    GameState(a_game),
-    grid(20)
+PlayLevelState::PlayLevelState(Game& game, int pixelsPerNode,
+                               ResourceManager& manager) :
+    GameState(game),
+    grid(pixelsPerNode, manager, 20)
 {
 
 }
@@ -34,5 +35,5 @@ void PlayLevelState::tick()
 
 void PlayLevelState::draw(sf::RenderTarget& target, sf::RenderStates states)
 {
-
+    grid.draw(target, states);
 }

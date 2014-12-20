@@ -3,12 +3,14 @@
 
 #include "GameState.h"
 #include "NodeGrid.h"
+#include "ResourceManager.h"
 
 /// The state in which levels are loaded and played
 class PlayLevelState : public GameState
 {
     public:
-        PlayLevelState(Game& a_game);
+        PlayLevelState(Game& a_game, int pixelsPerNode,
+                       ResourceManager& manager);
         virtual ~PlayLevelState();
 
         void pause();
