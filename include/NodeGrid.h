@@ -25,7 +25,7 @@ class NodeGrid
                      foth::heading eastTo, foth::heading southTo,
                      foth::heading westTo, foth::material material);
 
-        void draw(sf::RenderTarget& target, sf::RenderStates states);
+        void draw(sf::RenderTarget& target);
 
 	private:
         CenteredSprite grassSprite;

@@ -28,7 +28,8 @@ NodeGrid::~NodeGrid()
 
 }
 
-/// Determines the routing of a given heading for the Node at a given location./// Returns the opposite heading if a Node is not defined at that location.
+/// Determines the routing of a given heading for the Node at a given location.
+/// Returns the opposite heading if a Node is not defined at that location.
 heading NodeGrid::routeHeading(int nodeX, int nodeY, heading incoming)
 {
 	// If the node is in the grid, and if the node is not null
@@ -88,7 +89,7 @@ bool NodeGrid::setNode(int x, int y, foth::heading northTo, foth::heading eastTo
         return false;    
 }
 
-void NodeGrid::draw(sf::RenderTarget& target, sf::RenderStates states)
+void NodeGrid::draw(sf::RenderTarget& target)
 {
     for (int x = 0; x < width; ++x)
     {
@@ -99,7 +100,7 @@ void NodeGrid::draw(sf::RenderTarget& target, sf::RenderStates states)
                 grassSprite.setPosition(
                     (x * PIXELS_PER_NODE) + 0.5,
                     y * PIXELS_PER_NODE);
-                target.draw(grassSprite, states);
+                target.draw(grassSprite);
             }
         }
     }

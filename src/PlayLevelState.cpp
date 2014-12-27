@@ -33,7 +33,7 @@ void PlayLevelState::tick()
 
 }
 
-void PlayLevelState::draw(sf::RenderTarget& target, sf::RenderStates states)
+void PlayLevelState::draw(sf::RenderTarget& target)
 {
-    grid.draw(target, states);
+    grid.draw(target);
 }
