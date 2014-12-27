@@ -7,7 +7,7 @@
 Game::Game(sf::RenderWindow& a_window, sf::RenderTexture& virtualScreen) :
     window(a_window),
     virtualScreen(virtualScreen),
-    screenSprite(virtualScreen.getTexture()),
+    screenSprite(virtualScreen.getTexture(), true),
     screenView(sf::Vector2f(0, 0), sf::Vector2f(virtualScreen.getSize().x,
                                                 virtualScreen.getSize().y))
 {

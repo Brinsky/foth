@@ -7,7 +7,7 @@
 
 #include "Properties.h"
 #include "ResourceManager.h"
-#include "CenteredSprite.h"
+#include "ManagedSprite.h"
 
 /// A collection of node data which represents the contents of a FOTH level
 class NodeGrid
@@ -28,7 +28,7 @@ class NodeGrid
         void draw(sf::RenderTarget& target);
 
 	private:
-        CenteredSprite grassSprite;
+        ManagedSprite grassSprite;
 
 		/// Used to easily store the properties of defined nodes
 		typedef struct Node

@@ -7,7 +7,7 @@ using namespace foth;
 NodeGrid::NodeGrid(int pixelsPerNode, ResourceManager& manager, int height, 
                    int width) :
     PIXELS_PER_NODE(pixelsPerNode),
-    grassSprite("grassTile", manager)
+    grassSprite(manager, "grassTile", true)
 {
 	this->width = width;
 	this->height = height;

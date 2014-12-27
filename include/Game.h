@@ -5,7 +5,7 @@
 #include <memory>
 #include <SFML/Graphics.hpp>
 
-#include "CenteredSprite.h"
+#include "ManagedSprite.h"
 
 // Forward declaration, required to prevent circular dependency
 class GameState;
@@ -48,7 +48,7 @@ class Game
 
         void maintainAspectRatio(sf::View& view, sf::RenderWindow& window);
 
-        CenteredSprite screenSprite;
+        ManagedSprite screenSprite;
         sf::View screenView;
 
         std::stack<std::unique_ptr<GameState>> states;
