@@ -7,7 +7,8 @@ using namespace foth;
 NodeGrid::NodeGrid(int pixelsPerNode, ResourceManager& manager, int height, 
                    int width) :
     PIXELS_PER_NODE(pixelsPerNode),
-    grassSprite(manager, "grassTile", true)
+    grassSprite(manager, "grassTile", true),
+    stoneSprite(manager, "stoneTile", true)
 {
 	this->width = width;
 	this->height = height;
@@ -67,6 +68,14 @@ material NodeGrid::getMaterial(int nodeX, int nodeY)
 
 /// If the given coordinates are in bounds, a Node is established there with the
 /// specified properties. Returns false if the Node is not within bounds.
+bool NodeGrid::setNode(int x, int y, foth::material material)
+{
+    return setNode(x, y, foth::South, foth::West, foth::North, foth::East,
+                   material);
+}
+
+/// If the given coordinates are in bounds, a Node is established there with the
+/// specified properties. Returns false if the Node is not within bounds.
 bool NodeGrid::setNode(int x, int y, foth::heading northTo,
                        foth::heading eastTo, foth::heading southTo,
                        foth::heading westTo, foth::material material)
@@ -95,9 +104,15 @@ void NodeGrid::draw(VirtualScreen& screen)
     {
         for (int y = 0; y < height; ++y)
         {
-            if (getMaterial(x, y) == foth::Grass)
+            switch (getMaterial(x, y))
             {
-                screen.worldDraw(grassSprite, sf::Vector2f(x, y));
+                case foth::Grass:
+                    screen.worldDraw(grassSprite, sf::Vector2f(x, y));
+                    break;
+
+                case foth::Stone:
+                    screen.worldDraw(stoneSprite, sf::Vector2f(x, y));
+                    break;
             }
         }
     }

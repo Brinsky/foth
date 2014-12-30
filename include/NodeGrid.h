@@ -22,6 +22,7 @@ class NodeGrid
 			foth::heading incoming);
 		foth::material getMaterial(int x, int y);
 
+        bool setNode(int x, int y, foth::material material);
         bool setNode(int x, int y, foth::heading northTo,
                      foth::heading eastTo, foth::heading southTo,
                      foth::heading westTo, foth::material material);
@@ -30,6 +31,7 @@ class NodeGrid
 
 	private:
         ManagedSprite grassSprite;
+        ManagedSprite stoneSprite;
 
 		/// Used to easily store the properties of defined nodes
 		typedef struct Node

@@ -14,6 +14,7 @@ namespace foth
 	enum material
 	{
 		Grass,
+        Stone,
 		Track
 	};
 
