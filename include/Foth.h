@@ -8,14 +8,7 @@
 class Foth : public Game
 {
     public:
-        Foth(sf::RenderWindow& window, FothScreen& virtualScreen,
-             ResourceManager& manager);
-
-    private:
-        void event(sf::Event event);
-        void draw();
-
-        sf::Sprite testSprite;
+        Foth(sf::RenderWindow& window, FothScreen& virtualScreen);
 };
 
 #endif

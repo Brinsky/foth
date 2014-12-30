@@ -18,7 +18,7 @@ class PlayLevelState : public GameState
 
         void event(sf::Event event);
         void tick();
-        void draw(sf::RenderTarget& target);
+        void draw(VirtualScreen& screen);
 
     private:
         NodeGrid grid;

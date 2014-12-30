@@ -1,22 +1,20 @@
 #ifndef FOTHSCREEN_H
 #define FOTHSCREEN_H
 
-#include <SFML/Graphics.hpp>
+#include "VirtualScreen.h"
 
-class FothScreen : public sf::RenderTexture
+class FothScreen : public VirtualScreen
 {
     public:
         FothScreen(unsigned int width, unsigned int height,
-                         unsigned int pixelsPerNode);
-        void draw(sf::Sprite& sprite, const sf::Vector2f& worldPosition);
+                   unsigned int pixelsPerNode);
 
     private:
-        sf::Vector2f getPixelPosition(
-                const sf::Vector2f& worldPosition);
+        sf::Vector2f getPixelPosition(const sf::Vector2f& worldPos);
 
         const unsigned int PIXELS_PER_NODE;
-        unsigned int width;
         unsigned int height;
+        unsigned int width;
 };
 
 #endif

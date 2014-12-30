@@ -8,6 +8,7 @@
 #include "Properties.h"
 #include "ResourceManager.h"
 #include "ManagedSprite.h"
+#include "VirtualScreen.h"
 
 /// A collection of node data which represents the contents of a FOTH level
 class NodeGrid
@@ -25,7 +26,7 @@ class NodeGrid
                      foth::heading eastTo, foth::heading southTo,
                      foth::heading westTo, foth::material material);
 
-        void draw(sf::RenderTarget& target);
+        void draw(VirtualScreen& screen);
 
 	private:
         ManagedSprite grassSprite;

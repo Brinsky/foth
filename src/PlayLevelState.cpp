@@ -33,7 +33,7 @@ void PlayLevelState::tick()
 
 }
 
-void PlayLevelState::draw(sf::RenderTarget& target)
+void PlayLevelState::draw(VirtualScreen& screen)
 {
-    grid.draw(target);
+    grid.draw(screen);
 }

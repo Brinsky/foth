@@ -67,9 +67,9 @@ material NodeGrid::getMaterial(int nodeX, int nodeY)
 
 /// If the given coordinates are in bounds, a Node is established there with the
 /// specified properties. Returns false if the Node is not within bounds.
-bool NodeGrid::setNode(int x, int y, foth::heading northTo, foth::heading eastTo,
-                       foth::heading southTo, foth::heading westTo,
-                       foth::material material)
+bool NodeGrid::setNode(int x, int y, foth::heading northTo,
+                       foth::heading eastTo, foth::heading southTo,
+                       foth::heading westTo, foth::material material)
 {
     if (inBounds(x, y))
     {
@@ -89,7 +89,7 @@ bool NodeGrid::setNode(int x, int y, foth::heading northTo, foth::heading eastTo
         return false;    
 }
 
-void NodeGrid::draw(sf::RenderTarget& target)
+void NodeGrid::draw(VirtualScreen& screen)
 {
     for (int x = 0; x < width; ++x)
     {
@@ -97,10 +97,7 @@ void NodeGrid::draw(sf::RenderTarget& target)
         {
             if (getMaterial(x, y) == foth::Grass)
             {
-                grassSprite.setPosition(
-                    (x * PIXELS_PER_NODE) + 0.5,
-                    y * PIXELS_PER_NODE);
-                target.draw(grassSprite);
+                screen.worldDraw(grassSprite, sf::Vector2f(x, y));
             }
         }
     }
