@@ -5,17 +5,16 @@ namespace foth
 {
 	enum heading
 	{
-		North,
-		East,
-		South,
-		West
+		north,
+		east,
+		south,
+		west
 	};
 
 	enum material
 	{
-		Grass,
-        Stone,
-		Track
+		grass,
+        stone
 	};
 
 	heading flipHeading(heading incoming);

@@ -6,14 +6,14 @@ namespace foth
 	{
 		switch (incoming)
 		{
-			case North:
-				return South;
-			case East:
-				return West;
-			case South:
-				return North;
-			case West:
-				return East;
+			case north:
+				return south;
+			case east:
+				return west;
+			case south:
+				return north;
+			case west:
+				return east;
 		}
 	}
 }

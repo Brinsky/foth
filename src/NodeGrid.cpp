@@ -39,13 +39,13 @@ heading NodeGrid::routeHeading(int nodeX, int nodeY, heading incoming)
 		// Determine the proper routing through the node
 		switch (incoming)
 		{
-			case North:
+			case north:
 				return grid[nodeX][nodeY]->northTo;
-			case East:
+			case east:
 				return grid[nodeX][nodeY]->eastTo;
-			case South:
+			case south:
 				return grid[nodeX][nodeY]->westTo;
-			case West:
+			case west:
 				return grid[nodeX][nodeY]->southTo;
 		}
 	}
@@ -56,21 +56,21 @@ heading NodeGrid::routeHeading(int nodeX, int nodeY, heading incoming)
 	}
 }
 
-/// Determines the material of the Node at a given location. Returns Grass
+/// Determines the material of the Node at a given location. Returns grass
 /// if a Node is not defined at that location.
 material NodeGrid::getMaterial(int nodeX, int nodeY)
 {
 	if (nodeExists(nodeX, nodeY))
 		return grid[nodeX][nodeY]->material;
 	else
-		return Grass;
+		return grass;
 }
 
 /// If the given coordinates are in bounds, a Node is established there with the
 /// specified properties. Returns false if the Node is not within bounds.
 bool NodeGrid::setNode(int x, int y, foth::material material)
 {
-    return setNode(x, y, foth::South, foth::West, foth::North, foth::East,
+    return setNode(x, y, foth::south, foth::west, foth::north, foth::east,
                    material);
 }
 
@@ -106,11 +106,11 @@ void NodeGrid::draw(VirtualScreen& screen)
         {
             switch (getMaterial(x, y))
             {
-                case foth::Grass:
+                case foth::grass:
                     screen.worldDraw(grassSprite, sf::Vector2f(x, y));
                     break;
 
-                case foth::Stone:
+                case foth::stone:
                     screen.worldDraw(stoneSprite, sf::Vector2f(x, y));
                     break;
             }

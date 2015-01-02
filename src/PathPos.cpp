@@ -25,8 +25,8 @@ PathPos::PathPos(int nearestX, int nearestY, foth::heading direction,
         distance = -distance;
     }
 
-    // Depending on whether the direction is positive (i.e. North for Vertical,
-    // East for Horizontal) or negative, our axial distance will be negated.
+    // Depending on whether the direction is positive (i.e. north for Vertical,
+    // east for Horizontal) or negative, our axial distance will be negated.
     if (isPositiveOnAxis(direction))
         // Ensure distance is within [-0.5, 0.5)
         distFromNearest = reconcile(distance);
@@ -188,16 +188,16 @@ PathPos::axis PathPos::getAxis(foth::heading direction)
 {
     switch (direction)
     {
-        case foth::North:
+        case foth::north:
             return Vertical;
 
-        case foth::East:
+        case foth::east:
             return Horizontal;
 
-        case foth::South:
+        case foth::south:
             return Vertical;
 
-        case foth::West:
+        case foth::west:
             return Horizontal;
     }
 }
@@ -206,16 +206,16 @@ bool PathPos::isPositiveOnAxis(foth::heading direction)
 {
     switch (direction)
     {
-        case foth::North:
+        case foth::north:
             return true;
 
-        case foth::East:
+        case foth::east:
             return true;
 
-        case foth::South:
+        case foth::south:
             return false;
 
-        case foth::West:
+        case foth::west:
             return false;
     }
 }
@@ -224,16 +224,16 @@ bool PathPos::inAxis(foth::heading direction, axis givenAxis)
 {
     switch (direction)
     {
-        case foth::North:
+        case foth::north:
             return givenAxis == Vertical;
 
-        case foth::East:
+        case foth::east:
             return givenAxis == Horizontal;
 
-        case foth::South:
+        case foth::south:
             return givenAxis == Vertical;
 
-        case foth::West:
+        case foth::west:
             return givenAxis == Horizontal;
     }
 }
