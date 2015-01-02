@@ -9,7 +9,7 @@
 #include "ManagedSprite.h"
 #include "VirtualScreen.h"
 
-class MaterialGrid : public Grid <foth::material, foth::grass>
+class MaterialGrid : public Grid <foth::Material, foth::grass>
 {
     public:
         MaterialGrid(int width, int height, ResourceManager& manager);

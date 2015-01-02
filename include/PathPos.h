@@ -9,17 +9,17 @@ class PathPos
 {
     public:
         PathPos(int nearestX, int nearestY);
-        PathPos(int nearestX, int nearestY, foth::heading direction,
+        PathPos(int nearestX, int nearestY, foth::Heading direction,
                 double distance);
         virtual ~PathPos();
 
-        bool moveIfAble(foth::heading towards, double distance);
-        void moveToNextNode(foth::heading direction);
+        bool moveIfAble(foth::Heading towards, double distance);
+        void moveToNextNode(foth::Heading direction);
         //void moveToNearestBorder(); Might be unnecessary?
         void moveAlongAxis(double distance);
 
-        double distToNextNode(foth::heading direction);
-        double distToNextBorder(foth::heading direction);
+        double distToNextNode(foth::Heading direction);
+        double distToNextBorder(foth::Heading direction);
 
         double getAbsoluteX();
         double getAbsoluteY();
@@ -35,9 +35,9 @@ class PathPos
         int properRound(double value);
         double reconcile(double distance);
 
-        axis getAxis(foth::heading direction);
-        bool isPositiveOnAxis(foth::heading direction);
-        bool inAxis(foth::heading directionA, axis givenAxis);
+        axis getAxis(foth::Heading direction);
+        bool isPositiveOnAxis(foth::Heading direction);
+        bool inAxis(foth::Heading directionA, axis givenAxis);
 
         int nearestX;
         int nearestY;

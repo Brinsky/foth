@@ -18,14 +18,14 @@ class NodeGrid
                  int width = 7);
 		~NodeGrid();
 
-		foth::heading routeHeading(int x, int y,
-			foth::heading incoming);
-		foth::material getMaterial(int x, int y);
+		foth::Heading routeHeading(int x, int y,
+			foth::Heading incoming);
+		foth::Material getMaterial(int x, int y);
 
-        bool setNode(int x, int y, foth::material material);
-        bool setNode(int x, int y, foth::heading northTo,
-                     foth::heading eastTo, foth::heading southTo,
-                     foth::heading westTo, foth::material material);
+        bool setNode(int x, int y, foth::Material material);
+        bool setNode(int x, int y, foth::Heading northTo,
+                     foth::Heading eastTo, foth::Heading southTo,
+                     foth::Heading westTo, foth::Material material);
 
         void draw(VirtualScreen& screen);
 
@@ -36,12 +36,12 @@ class NodeGrid
 		/// Used to easily store the properties of defined nodes
 		typedef struct Node
 		{
-			foth::heading northTo;
-			foth::heading eastTo;
-			foth::heading southTo;
-			foth::heading westTo;
+			foth::Heading northTo;
+			foth::Heading eastTo;
+			foth::Heading southTo;
+			foth::Heading westTo;
 
-			foth::material material;
+			foth::Material material;
 		} Node;
 		
 		bool nodeExists(int x, int y);

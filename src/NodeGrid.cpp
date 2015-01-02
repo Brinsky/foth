@@ -31,7 +31,7 @@ NodeGrid::~NodeGrid()
 
 /// Determines the routing of a given heading for the Node at a given location.
 /// Returns the opposite heading if a Node is not defined at that location.
-heading NodeGrid::routeHeading(int nodeX, int nodeY, heading incoming)
+Heading NodeGrid::routeHeading(int nodeX, int nodeY, Heading incoming)
 {
 	// If the node is in the grid, and if the node is not null
 	if(nodeExists(nodeX, nodeY)) 
@@ -58,7 +58,7 @@ heading NodeGrid::routeHeading(int nodeX, int nodeY, heading incoming)
 
 /// Determines the material of the Node at a given location. Returns grass
 /// if a Node is not defined at that location.
-material NodeGrid::getMaterial(int nodeX, int nodeY)
+Material NodeGrid::getMaterial(int nodeX, int nodeY)
 {
 	if (nodeExists(nodeX, nodeY))
 		return grid[nodeX][nodeY]->material;
@@ -68,7 +68,7 @@ material NodeGrid::getMaterial(int nodeX, int nodeY)
 
 /// If the given coordinates are in bounds, a Node is established there with the
 /// specified properties. Returns false if the Node is not within bounds.
-bool NodeGrid::setNode(int x, int y, foth::material material)
+bool NodeGrid::setNode(int x, int y, foth::Material material)
 {
     return setNode(x, y, foth::south, foth::west, foth::north, foth::east,
                    material);
@@ -76,9 +76,9 @@ bool NodeGrid::setNode(int x, int y, foth::material material)
 
 /// If the given coordinates are in bounds, a Node is established there with the
 /// specified properties. Returns false if the Node is not within bounds.
-bool NodeGrid::setNode(int x, int y, foth::heading northTo,
-                       foth::heading eastTo, foth::heading southTo,
-                       foth::heading westTo, foth::material material)
+bool NodeGrid::setNode(int x, int y, foth::Heading northTo,
+                       foth::Heading eastTo, foth::Heading southTo,
+                       foth::Heading westTo, foth::Material material)
 {
     if (inBounds(x, y))
     {

@@ -9,7 +9,7 @@ PathPos::PathPos(int nodeX, int nodeY)
     distFromNearest = 0;
 }
 
-PathPos::PathPos(int nearestX, int nearestY, foth::heading direction,
+PathPos::PathPos(int nearestX, int nearestY, foth::Heading direction,
                  double distance)
 {
     this->nearestX = nearestX;
@@ -42,7 +42,7 @@ PathPos::~PathPos()
 
 /// Moves in a given direction if the position is aligned with the proper axis.
 /// Returns false otherwise.
-bool PathPos::moveIfAble(foth::heading towards, double distance)
+bool PathPos::moveIfAble(foth::Heading towards, double distance)
 {
     // Fail if we are not aligned with the axis in question
     if (distance > 0 && !inAxis(towards, mainAxis))
@@ -65,7 +65,7 @@ bool PathPos::moveIfAble(foth::heading towards, double distance)
 }
 
 /// Shifts the position to the nearest node in a given direction
-void PathPos::moveToNextNode(foth::heading direction)
+void PathPos::moveToNextNode(foth::Heading direction)
 {
     distFromNearest = 0;
 }
@@ -88,7 +88,7 @@ void PathPos::moveAlongAxis(double distance)
 }
 
 /// Returns the distance to the nearest node in a given direction
-double PathPos::distToNextNode(foth::heading direction)
+double PathPos::distToNextNode(foth::Heading direction)
 {
     if (getAxis(direction) != mainAxis)
         return 1;
@@ -111,7 +111,7 @@ double PathPos::distToNextNode(foth::heading direction)
     }
 }
 
-double PathPos::distToNextBorder(foth::heading direction)
+double PathPos::distToNextBorder(foth::Heading direction)
 {
     if (getAxis(direction) != mainAxis)
         return 0.5;
@@ -184,7 +184,7 @@ double PathPos::reconcile(double distance)
         return distance;
 }
 
-PathPos::axis PathPos::getAxis(foth::heading direction)
+PathPos::axis PathPos::getAxis(foth::Heading direction)
 {
     switch (direction)
     {
@@ -202,7 +202,7 @@ PathPos::axis PathPos::getAxis(foth::heading direction)
     }
 }
 
-bool PathPos::isPositiveOnAxis(foth::heading direction)
+bool PathPos::isPositiveOnAxis(foth::Heading direction)
 {
     switch (direction)
     {
@@ -220,7 +220,7 @@ bool PathPos::isPositiveOnAxis(foth::heading direction)
     }
 }
 
-bool PathPos::inAxis(foth::heading direction, axis givenAxis)
+bool PathPos::inAxis(foth::Heading direction, axis givenAxis)
 {
     switch (direction)
     {

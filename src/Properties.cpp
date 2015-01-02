@@ -2,7 +2,7 @@
 
 namespace foth
 {
-	heading flipHeading(heading incoming)
+	Heading flipHeading(Heading incoming)
 	{
 		switch (incoming)
 		{

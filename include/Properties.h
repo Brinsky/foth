@@ -3,7 +3,7 @@
 
 namespace foth
 {
-	enum heading
+	enum Heading
 	{
 		north,
 		east,
@@ -11,13 +11,24 @@ namespace foth
 		west
 	};
 
-	enum material
+	enum Material
 	{
 		grass,
         stone
 	};
 
-	heading flipHeading(heading incoming);
+    enum Track
+    {
+        none,
+        northSouth,
+        eastWest,
+        northEast,
+        southEast,
+        northWest,
+        southWest
+    };
+
+	Heading flipHeading(Heading incoming);
 }
 
 #endif
