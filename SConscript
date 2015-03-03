@@ -5,10 +5,13 @@
 
 execName = 'foth'
 
-libList = [ 'sfml-window','sfml-system','sfml-graphics' ]
+includeDirs = ['./include', './include/StateManager', '/usr/include',
+               './include/ResourceManager']
 
-env = Environment( CPPPATH = [ './include', '/usr/include' ] )
+env = Environment(CPPPATH = includeDirs,
+                  LIBPATH = ['./lib', '/usr/lib'],
+                  LIBS = ['sfml-window', 'sfml-system', 'sfml-graphics',
+                          'sfml-state-man'],
+                  CXXFLAGS = "-std=c++11")
 
-# The "'../' + " before the target name is used to keep the executable in the top level of the project folder
-# Remove it in order to keep the executable in the variant_dir
-env.Program( target = '../' + execName , source = Glob( 'src/*.cpp' ), LIBS = libList, LIBPATH = '/usr/lib', CXXFLAGS = "-std=c++11" )
+env.Program(target = '../' + execName, source = Glob('src/*.cpp'))

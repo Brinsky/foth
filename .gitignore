@@ -4,3 +4,6 @@ foth
 **/*.swp
 **/*.swo
 docs/**
+
+include/ResourceManager/**
+include/StateManager/**
