@@ -18,8 +18,8 @@ class PlayLevelState : public GameState
         void pause();
         void resume();
 
-        void event(sf::Event event);
-        void tick();
+        void event(sf::Time elapsed, sf::Event event);
+        void update(sf::Time elapsed);
         void draw(VirtualScreen& screen);
 
     private:

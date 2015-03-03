@@ -35,11 +35,11 @@ void PlayLevelState::resume()
 
 }
 
-void PlayLevelState::event(sf::Event event)
+void PlayLevelState::event(sf::Time elapsed, sf::Event event)
 {
-    if( event.type == sf::Event::KeyPressed )
+    if (event.type == sf::Event::KeyPressed)
     {
-        switch( event.key.code )
+        switch (event.key.code)
         {
             /// Deal with TrackLayer movement
             case sf::Keyboard::Left:
@@ -61,7 +61,7 @@ void PlayLevelState::event(sf::Event event)
     }
 }
 
-void PlayLevelState::tick()
+void PlayLevelState::update(sf::Time elapsed)
 {
 
 }
