@@ -35,12 +35,12 @@ void TrackGrid::draw(VirtualScreen& screen)
                     break;
                 case foth::southEast:
                     track.setTextureRect(turn);
-                    track.setRotation(0);
+                    track.setRotation(270);
                     screen.worldDraw(track, sf::Vector2f(x, y));
                     break;
                 case foth::southWest:
                     track.setTextureRect(turn);
-                    track.setRotation(270);
+                    track.setRotation(0);
                     screen.worldDraw(track, sf::Vector2f(x, y));
                     break;
                 case foth::eastWest:

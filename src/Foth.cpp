@@ -25,7 +25,7 @@ int main()
     sf::RenderWindow window(sf::VideoMode(SCREEN_WIDTH, SCREEN_HEIGHT), 
                             "foth");
 
-    // In order to deal with aspect ration consistency and the conversion from
+    // In order to deal with aspect ratio consistency and the conversion from
     // game coordinates to pixel coordinates, we create a virtual screen and
     // render to that, then apply it to the main window as a sprite
     FothScreen virtualScreen(SCREEN_WIDTH, SCREEN_HEIGHT, PIXELS_PER_NODE);

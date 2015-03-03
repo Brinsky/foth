@@ -19,6 +19,7 @@ class Grid
                 std::fill(x->begin(), x->end(), default_t);
             }
         }
+
         ~Grid() {}
         bool setNode(int x, int y, T t)
         {
@@ -32,6 +33,7 @@ class Grid
                 return false;
             }
         }
+
         T getNode(int x, int y)
         {
             if (inBounds(x, y))
@@ -39,14 +41,16 @@ class Grid
             else
                 return default_t;
         }
-    protected:
-        int width;
-        int height;
-        std::vector<std::vector<T>> grid;
+
         bool inBounds(int x, int y)
         {
             return x >= 0 && x < width && y >= 0 && y < height;
         }
+
+    protected:
+        int width;
+        int height;
+        std::vector<std::vector<T>> grid;
 };
 
 #endif

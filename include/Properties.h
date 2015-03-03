@@ -29,6 +29,7 @@ namespace foth
     };
 
 	Heading flipHeading(Heading incoming);
+    Track trackOrientation(Heading a, Heading b);
 }
 
 #endif

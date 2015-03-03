@@ -15,6 +15,7 @@ class TrackGrid : public Grid <foth::Track, foth::none>
         TrackGrid(int width, int height, ResourceManager& manager);
         void draw(VirtualScreen& screen);
         foth::Heading routeHeading(int x, int y, foth::Heading incoming);
+
     private:
         ManagedSprite track;
         sf::IntRect straight;
