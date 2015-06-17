@@ -14,7 +14,7 @@ const int PIXELS_PER_NODE = 64;
 
 int main()
 {
-    ResourceManager manager("res/textures", "res/animations");
+    ResourceManager manager("res/resources.txt");
 
     if (!manager)
     {

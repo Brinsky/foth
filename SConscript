@@ -11,7 +11,7 @@ includeDirs = ['./include', './include/StateManager', '/usr/include',
 env = Environment(CPPPATH = includeDirs,
                   LIBPATH = ['./lib', '/usr/lib'],
                   LIBS = ['sfml-window', 'sfml-system', 'sfml-graphics',
-                          'sfml-state-man'],
+                          'sfml-state-man', 'sfml-res-man'],
                   CXXFLAGS = "-std=c++11")
 
 env.Program(target = '../' + execName, source = Glob('src/*.cpp'))

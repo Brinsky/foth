@@ -18,8 +18,6 @@ class TrackGrid : public Grid <foth::Track, foth::none>
 
     private:
         ManagedSprite track;
-        sf::IntRect straight;
-        sf::IntRect turn;
 };
 
 #endif
