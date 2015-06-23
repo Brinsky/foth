@@ -3,7 +3,6 @@
 
 #include "Game.h"
 #include "FothScreen.h"
-#include "ResourceManager.h"
 
 class Foth : public Game
 {

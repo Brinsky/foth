@@ -14,6 +14,8 @@ namespace foth
 				return north;
 			case west:
 				return east;
+			default:
+				return north;
 		}
 	}
 
@@ -82,6 +84,8 @@ namespace foth
             default:
                 return none;
         }
+
+		return none;
 
     }
 }
