@@ -15,7 +15,7 @@ all: build foth tidy
 foth: Foth.o FothScreen.o PlayLevelState.o MaterialGrid.o TrackGrid.o TrackLayer.o Properties.o 
 	$(CXX) $^ $(CXXFLAGS) $(INCLUDES) $(LIBS) -o $@
 
-%.o: %.cpp
+%.o: %.cpp %.h
 	$(CXX) -c $< $(CXXFLAGS) $(INCLUDES) $(LIBS)
 
 build:
