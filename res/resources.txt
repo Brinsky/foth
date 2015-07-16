@@ -1,18 +1,24 @@
 ## tiles
 
 #grass tile
-establish grassTile sprite 
-texture grassTile mat/grassTile.png rough
+sprite grassTile
+{
+	texture mat/grassTile.png rough
+}
 
 #stone tile
-establish stoneTile sprite
-texture stoneTile mat/stoneTile.png rough
+sprite stoneTile
+{
+	texture mat/stoneTile.png rough
+}
 
 ## main assets
 
 #track
-establish track sheet
-dimension track 64 64
-texture track track.png smooth
-add-frame track straight 0 0
-add-frame track turn 64 0
+sheet track
+{
+	dimension 64 64
+	texture track.png smooth
+	add-frame straight 0 0
+	add-frame turn 64 0
+}
