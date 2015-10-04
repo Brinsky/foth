@@ -2,22 +2,22 @@
 
 namespace foth
 {
-	Heading flipHeading(Heading incoming)
-	{
-		switch (incoming)
-		{
-			case north:
-				return south;
-			case east:
-				return west;
-			case south:
-				return north;
-			case west:
-				return east;
-			default:
-				return north;
-		}
-	}
+    Heading flipHeading(Heading incoming)
+    {
+        switch (incoming)
+        {
+            case north:
+                return south;
+            case east:
+                return west;
+            case south:
+                return north;
+            case west:
+                return east;
+            default:
+                return north;
+        }
+    }
 
     /// Returns a valid track piece based on the orientation of its two ends
     Track trackOrientation(Heading a, Heading b)
@@ -85,7 +85,7 @@ namespace foth
                 return none;
         }
 
-		return none;
+        return none;
 
     }
 }

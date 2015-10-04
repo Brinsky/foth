@@ -6,7 +6,7 @@
 #include "Grid.h"
 #include "Properties.h"
 #include "ResourceManager.h"
-#include "ManagedSprite.h"
+#include "SpriteSheet.h"
 #include "VirtualScreen.h" 
 
 class TrackGrid : public Grid <foth::Track, foth::none>
@@ -17,7 +17,7 @@ class TrackGrid : public Grid <foth::Track, foth::none>
         foth::Heading routeHeading(int x, int y, foth::Heading incoming);
 
     private:
-        ManagedSprite track;
+        SpriteSheet track;
 };
 
 #endif

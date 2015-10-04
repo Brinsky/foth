@@ -6,7 +6,6 @@
 #include "Grid.h"
 #include "Properties.h"
 #include "ResourceManager.h"
-#include "ManagedSprite.h"
 #include "VirtualScreen.h"
 
 class MaterialGrid : public Grid <foth::Material, foth::grass>
@@ -15,8 +14,8 @@ class MaterialGrid : public Grid <foth::Material, foth::grass>
         MaterialGrid(int width, int height, ResourceManager& manager);
         void draw(VirtualScreen& screen);
     private:
-        ManagedSprite grassSprite;
-        ManagedSprite stoneSprite;
+    sf::Sprite grassSprite;
+    sf::Sprite stoneSprite;
 };
 
 #endif

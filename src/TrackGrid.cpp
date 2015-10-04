@@ -1,9 +1,10 @@
 #include "TrackGrid.h"
 
 TrackGrid::TrackGrid(int width, int height, ResourceManager& manager) :
-    Grid(width, height),
-    track(manager, "track", "straight", true)
-{}
+    Grid(width, height), track(manager.newSheet("track", "straight", true))
+{
+
+}
 
 void TrackGrid::draw(VirtualScreen& screen)
 {

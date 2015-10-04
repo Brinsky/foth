@@ -1,10 +1,10 @@
 #include "MaterialGrid.h"
 
 MaterialGrid::MaterialGrid(int width, int height, ResourceManager& manager) : 
-    Grid(width, height), 
-    grassSprite(manager, "grassTile", true),
-    stoneSprite(manager, "stoneTile", true)
+    Grid(width, height), grassSprite(manager.newSprite("grassTile", true)),
+    stoneSprite(manager.newSprite("stoneTile", true))
 {
+
 }
 
 void MaterialGrid::draw(VirtualScreen& screen)
